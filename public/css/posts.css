@@ -2,16 +2,13 @@ body {
     background: linear-gradient(to bottom, #ecd1e0, #ffffff);
     margin: 0;
     width: 100%;
-}
-
-.box {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.box>a {
+.botao {
     padding: 15px;
     background-color: #fff;
     border-radius: 3px;
@@ -30,6 +27,7 @@ body {
 .content {
     position: relative;
     background: white;
+    width: 40%;
     padding: 1em 2em;
     border-radius: 4px;
 }
@@ -40,7 +38,7 @@ body {
 
 .fecha {
     position: absolute;
-    top: 10px;
+    top: -1px;
     right: 10px;
     color: #fe0606;
     font-size: 30px;
@@ -58,5 +56,4 @@ body {
 .direita {
     display: flex;
     flex-direction: column;
-
 }
