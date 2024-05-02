@@ -14,6 +14,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+
 </head>
 
 <body>
@@ -34,17 +35,22 @@
                             rows="7" cols="50"></textarea>
                     </div>
                     <div class="direita">
-                        <label for="img">Selecione uma imagem:</label>
+                        <label class="form-img" for="img">
+                            <p>Selecione uma imagem</p>
+                        </label>
                         <input type="file" id="img" name="img" accept="image/*">
                         <label for="data">Data:</label>
                         <input type="date" id="data" name="data">
                     </div>
                 </div>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Publicar">
             </form>
             <a class="fecha" href="#">&times;</a>
         </div>
     </div>
+    <script>
+        document.getElementById('data').valueAsDate = new Date();
+    </script>
 </body>
 
 </html>

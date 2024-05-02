@@ -2,6 +2,7 @@ body {
     background: linear-gradient(to bottom, #ecd1e0, #ffffff);
     margin: 0;
     width: 100%;
+    color: #453232;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -32,9 +33,16 @@ body {
 .content {
     margin: 8px;
     position: relative;
-    background: white;
+    background: #f5f5f5;
     padding: 10px 20px;
-    border-radius: 4px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    gap: 40px;
+    flex-wrap: wrap;
+    height: 80%;
     overflow-y: scroll;
 }
 
@@ -50,35 +58,11 @@ body {
     text-decoration: none;
 }
 
-.formulario {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: 40px;
-}
 
-.formulario>.direita {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-input {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid #453232;
-    border-radius: 4px;
-    background-color: #ecd1e0;
-    color: #453232;
-}
 
 textarea {
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
     box-sizing: border-box;
     border: 2px solid #453232;
     border-radius: 4px;
@@ -86,30 +70,14 @@ textarea {
     color: #453232;
 }
 
-input[type="file"] {
-    display: none;
-}
-
-.form-img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #ecd1e0;
-    padding: 12px 20px;
-    color: #453232;
-    height: 8vh;
-    text-align: center;
-    cursor: pointer;
+.direita>img {
+    width: 140px;
     box-sizing: border-box;
     border: 2px solid #453232;
     border-radius: 4px;
-    margin-bottom: 8px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    letter-spacing: -1px;
-    font-size: 18px;
 }
+
+
 
 a {
     color: #453232;
@@ -119,15 +87,49 @@ a:visited {
     color: #453232;
 }
 
-@media only screen and (max-width: 550px) {
-    .form-img {
-        font-size: 14px;
-    }
+.quebra {
+    flex-basis: 100%;
 }
 
-@media only screen and (max-width: 410px) {
-    .formulario {
-        flex-direction: column;
-        gap: 10px;
+button {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #453232;
+    border-radius: 4px;
+    background-color: #ecd1e0;
+    color: #453232;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: -1px;
+    font-size: 24px;
+}
+
+@media only screen and (max-width: 510px) {
+    h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .direita>img {
+        width: 100px;
+    }
+
+    .content {
+        align-items: start;
+        justify-content: flex-start;
+    }
+
+    .quebra {
+        display: none;
+    }
+
+    button {
+        font-size: 20px;
     }
 }
