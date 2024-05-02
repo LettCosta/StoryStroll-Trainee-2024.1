@@ -36,7 +36,6 @@ body {
     background: white;
     padding: 10px 20px;
     border-radius: 4px;
-
 }
 
 .popup:target {
@@ -147,5 +146,9 @@ a:visited {
     .formulario {
         flex-direction: column;
         gap: 10px;
+    }
+
+    .content {
+        overflow-y: scroll;
     }
 }

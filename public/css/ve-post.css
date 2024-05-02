@@ -42,8 +42,6 @@ body {
     flex-direction: row;
     gap: 40px;
     flex-wrap: wrap;
-    height: 80%;
-    overflow-y: scroll;
 }
 
 .popup:target {
@@ -123,6 +121,7 @@ button {
     .content {
         align-items: start;
         justify-content: flex-start;
+        overflow-y: scroll;
     }
 
     .quebra {
