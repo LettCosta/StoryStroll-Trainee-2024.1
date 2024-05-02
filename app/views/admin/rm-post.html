@@ -39,7 +39,11 @@
             </div>
             <a class="fecha" href="#">&times;</a>
             <div class="quebra"></div>
-            <button onclick="Excluir()">Excluir publicação</button>
+            <form action="#" method="delete" enctype="multipart/form-data">
+                <input type="hidden" value="id-do-post">
+                <input type="submit" value="Excluir publicação" onclick="Excluir()">
+            </form>
+
         </div>
 
     </div>
