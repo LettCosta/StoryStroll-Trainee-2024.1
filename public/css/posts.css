@@ -11,6 +11,7 @@ body {
     font-style: normal;
     letter-spacing: -1px;
     font-size: 24px;
+
 }
 
 .botao {
@@ -35,7 +36,7 @@ body {
     background: white;
     padding: 10px 20px;
     border-radius: 4px;
-    overflow-y: scroll;
+
 }
 
 .popup:target {
@@ -55,6 +56,7 @@ body {
     align-items: center;
     flex-direction: row;
     gap: 40px;
+
 }
 
 .formulario>.direita {
@@ -88,6 +90,22 @@ textarea {
 
 input[type="file"] {
     display: none;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #453232;
+    border-radius: 4px;
+    background-color: #ecd1e0;
+    color: #453232;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: -1px;
+    font-size: 24px;
 }
 
 .form-img {
