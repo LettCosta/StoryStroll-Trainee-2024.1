@@ -11,7 +11,6 @@ body {
     font-style: normal;
     letter-spacing: -1px;
     font-size: 24px;
-
 }
 
 .botao {
@@ -28,6 +27,7 @@ body {
     display: none;
     align-items: center;
     justify-content: center;
+    overflow-y: scroll;
 }
 
 .content {
@@ -36,6 +36,10 @@ body {
     background: white;
     padding: 10px 20px;
     border-radius: 4px;
+}
+
+.capa {
+    width: 60%;
 }
 
 .popup:target {
@@ -63,6 +67,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
+    text-align: start;
 }
 
 input {

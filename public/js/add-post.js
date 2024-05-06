@@ -1,4 +1,3 @@
-
 function verifica(){
     document.getElementById("img").value = null;
     document.getElementById("img").onchange = function(){
