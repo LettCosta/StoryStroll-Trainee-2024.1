@@ -5,3 +5,11 @@ function verifica(){
     }
 }
 
+document.getElementById('img').addEventListener('change', function (e) {
+    var reader = new FileReader();
+    reader.onload = function (event) {
+        document.getElementById('preview').src = event.target.result;
+        document.getElementById('preview').style.display = 'block';
+    }
+    reader.readAsDataURL(e.target.files[0]);
+});
