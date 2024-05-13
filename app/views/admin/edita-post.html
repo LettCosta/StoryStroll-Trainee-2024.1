@@ -14,7 +14,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <script src="../../../public/js/add-post.js"></script>
+
 
 </head>
 
@@ -29,20 +29,53 @@
                         <label for="autor">Autor</label><br>
                         <input type="text" id="autor" name="autor" value="pedro_123" readonly><br>
                         <label for="titulo">Título</label><br>
-                        <input type="text" id="titulo" name="titulo" placeholder="Título da sua review"
-                            value="Título"><br>
+                        <input type="text" id="titulo" name="titulo" placeholder="Título da sua review" value="Título">
+                        <div class="rating">
+                            <label>
+                                <input type="radio" name="stars" value="1" />
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="stars" value="2" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="stars" value="3" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="stars" value="4" checked="checked" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="stars" value="5" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                        </div>
+                        <br>
                         <label for="conteudo">Review</label><br>
                         <textarea type="text" id="conteudo" name="conteudo" placeholder="Conteudo da sua review"
                             rows="7" cols="50">Sua review</textarea>
                     </div>
                     <div class="direita">
-                        <img class="capa" src="../../../public/assets/capa.jpg">
-                        <label class="form-img" for="img">
-                            <p id="imgname">Selecione uma imagem</p>
-                        </label>
-                        <input onclick="verifica()" type="file" id="img" name="img" accept="image/*">
-                        <label for="data">Data:</label>
+                        <div class="img-prev"><img id="preview" src="../../../public/assets/capa.jpg"
+                                alt="Pré-visualização da imagem">
+                        </div>
+                        <label for="img">Selecione uma imagem:</label>
+                        <input type="file" id="img" name="img" accept="image/*">
+                        <label for="data">Data da leitura:</label>
                         <input type="date" id="data" name="data">
+                        <input type="hidden" id="dataat" name="dataat">
                     </div>
                 </div>
                 <input type="submit" value="Salvar">
@@ -50,9 +83,7 @@
             <a class="fecha" href="#">&times;</a>
         </div>
     </div>
-    <script>
-        document.getElementById('data').valueAsDate = new Date();
-    </script>
+    <script src="../../../public/js/add-post.js"></script>
 </body>
 
 </html>

@@ -69,10 +69,14 @@
                             rows="7" cols="50"></textarea>
                     </div>
                     <div class="direita">
-                        <img id="preview" src="" alt="Pré-visualização da imagem" style="display: none;">
-                        <input onclick="verifica()" type="file" id="img" name="img" accept="image/*">
-                        <label for="data">Data:</label>
+                        <div class="img-prev"><img id="preview" src="" alt="Pré-visualização da imagem"
+                                style="display: none;">
+                        </div>
+                        <label for="img">Selecione uma imagem:</label>
+                        <input type="file" id="img" name="img" accept="image/*">
+                        <label for="data">Data da leitura:</label>
                         <input type="date" id="data" name="data">
+                        <input type="hidden" id="dataat" name="dataat">
                     </div>
                 </div>
                 <input type="submit" value="Publicar">
@@ -80,9 +84,6 @@
             <a class="fecha" href="#">&times;</a>
         </div>
     </div>
-    <script>
-        document.getElementById('data').valueAsDate = new Date();
-    </script>
     <script src="../../../public/js/add-post.js"></script>
 </body>
 

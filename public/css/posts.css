@@ -76,6 +76,19 @@ body {
     text-align: start;
 }
 
+.img-prev {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #453232;
+    border-radius: 4px;
+    height: 20vh;
+    width: 100%;
+    background-color: #ecd1e0;
+}
+
 input {
     width: 100%;
     padding: 12px 20px;
@@ -124,8 +137,8 @@ input[type="submit"] {
 }
 
 #preview {
-    max-width: 70%;
-    max-height: 500px;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .form-img {
@@ -227,6 +240,38 @@ a:visited {
 @media only screen and (max-width: 550px) {
     .form-img {
         font-size: 14px;
+    }
+
+
+}
+
+@media only screen and (max-height: 950px) {
+    .content {
+        margin-top: 10vh;
+    }
+}
+
+@media only screen and (max-height: 870px) {
+    .content {
+        margin-top: 15vh;
+    }
+}
+
+@media only screen and (max-height: 800px) {
+    .content {
+        margin-top: 25vh;
+    }
+}
+
+@media only screen and (max-height: 720px) {
+    .content {
+        margin-top: 30vh;
+    }
+}
+
+@media only screen and (max-height: 690px) {
+    .content {
+        margin-top: 35vh;
     }
 }
 
