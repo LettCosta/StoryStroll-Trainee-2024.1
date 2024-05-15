@@ -20,6 +20,7 @@ body {
     text-decoration: none;
 }
 
+
 .popup {
     position: fixed;
     inset: 0;
@@ -78,6 +79,7 @@ textarea {
     justify-content: flex-start;
     align-items: center;
     text-align: start;
+    width: 61%;
 }
 
 .img-prev {
@@ -288,4 +290,44 @@ a:visited {
     .content {
         overflow-y: scroll;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.livro {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 40px;
+}
+
+.bt-livro {
+    display: flex;
+    justify-content: center;
+}
+
+.bt-livro>a {
+    padding: 4px;
+    text-decoration: none;
+    box-sizing: border-box;
+    border: 2px solid #453232;
+    border-radius: 4px;
+    background-color: #ecd1e0;
+    color: #453232;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: -1px;
 }

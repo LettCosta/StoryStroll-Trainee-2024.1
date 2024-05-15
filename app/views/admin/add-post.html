@@ -25,37 +25,89 @@
         <div class="content">
 
             <form action="#" method="post" enctype="multipart/form-data">
+                <div class="livro">
+                    <div class="direita">
+                        <label for="titulo-livro">Título do livro</label><br>
+                        <input type="text" id="titulo-livro" name="titulo-livro" placeholder="Título do livro"><br>
+                        <label for="autor-livro">Nome do autor</label><br>
+                        <input type="text" id="autor-livro" name="autor-livro" placeholder="Nome do autor do livro"><br>
+                        <label for="ano-pub">Ano de publicação</label>
+                        <input name="ano-pub" id="ano-pub" type="number" placeholder="Ano de publicação" max="2024">
+                    </div>
+                    <div class="esquerda">
+                        <label for="sinopse">Sinopse</label><br>
+                        <textarea name="sinopse" rows="7" cols="50" id="sinopse">
+                        </textarea>
+                        <br>
+                        <label>Nota média da internet</label><br>
+                        <div class="rating">
+                            <label>
+                                <input type="radio" name="nota-net" value="1" />
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="nota-net" value="2" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="nota-net" value="3" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="nota-net" value="4" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="nota-net" value="5" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                        </div><br>
+
+                    </div>
+                </div>
+                <hr>
                 <div class="formulario">
                     <div class="esquerda">
                         <label for="autor">Autor</label><br>
                         <input type="text" id="autor" name="autor" value="pedro_123" readonly><br>
                         <label for="titulo">Título</label><br>
                         <input type="text" id="titulo" name="titulo" placeholder="Título da sua review"><br>
+                        <label>Sua nota</label><br>
                         <div class="rating">
                             <label>
-                                <input type="radio" name="stars" value="1" />
+                                <input type="radio" name="nota-user" value="1" />
                                 <span class="icon">★</span>
                             </label>
                             <label>
-                                <input type="radio" name="stars" value="2" />
-                                <span class="icon">★</span>
-                                <span class="icon">★</span>
-                            </label>
-                            <label>
-                                <input type="radio" name="stars" value="3" />
-                                <span class="icon">★</span>
+                                <input type="radio" name="nota-user" value="2" />
                                 <span class="icon">★</span>
                                 <span class="icon">★</span>
                             </label>
                             <label>
-                                <input type="radio" name="stars" value="4" />
-                                <span class="icon">★</span>
+                                <input type="radio" name="nota-user" value="3" />
                                 <span class="icon">★</span>
                                 <span class="icon">★</span>
                                 <span class="icon">★</span>
                             </label>
                             <label>
-                                <input type="radio" name="stars" value="5" />
+                                <input type="radio" name="nota-user" value="4" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="nota-user" value="5" />
                                 <span class="icon">★</span>
                                 <span class="icon">★</span>
                                 <span class="icon">★</span>
@@ -73,15 +125,15 @@
                                 style="display: none;">
                         </div>
                         <label for="img">Selecione uma imagem:</label>
-                        <input type="file" id="img" name="img" accept="image/*">
+                        <input type="file" id="img-adc" name="img" accept="image/*">
                         <label for="data">Data da leitura:</label>
-                        <input type="date" id="data" name="data">
-                        <input type="hidden" id="dataat" name="dataat">
+                        <input type="date" id="data-adc" name="data">
+                        <input type="date" style="display: none;" id="dataat" name="dataat">
                     </div>
                 </div>
                 <input type="submit" value="Publicar">
             </form>
-            <a class="fecha" href="#">&times;</a>
+            <a class="fecha" href="#" onclick="fecharModal('adiciona-post')">&times;</a>
         </div>
     </div>
     <script src="../../../public/js/add-post.js"></script>
