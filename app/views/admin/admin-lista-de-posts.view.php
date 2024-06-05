@@ -37,7 +37,7 @@
                         <td class="espaco-id"><?php echo $idCont ?></td>
                         <td class="espaco-titulo"><?php echo $post->titulo_post ?></td>
                         <td class="espaco-autor"><?php echo $post->name ?></td>
-                        <td class="espaco-data"><?php echo $post->data_post ?></td>
+                        <td class="espaco-data"><?php echo DateTime::createFromFormat('Y-m-d', $post->data_post)->format('d/m/Y') ?></td>
                         <td class="espaco-visualizar"><button type="button" class="botao-visualizar"
                                 onclick="abrirModal('visualizar<?php echo $post->id ?>')"><i
                                     class="bi bi-eye-fill"></i><br>Visualizar</button>
@@ -55,7 +55,7 @@
                         <td class="espaco-id" rowspan="2"><?php echo $post->id ?></td>
                         <td class="espaco-titulo"><?php echo $post->titulo_post ?></td>
                         <td class="espaco-autor"><?php echo $post->name ?></td>
-                        <td class="espaco-data" rowspan="2"><?php echo $post->data_post ?></td>
+                        <td class="espaco-data" rowspan="2"><?php echo DateTime::createFromFormat('Y-m-d', $post->data_post)->format('d/m/Y') ?></td>
                         <td class="espaco-visualizar"><button type="button" class="botao-visualizar"
                                 onclick="abrirModal('visualizar<?php echo $post->id ?>')"><i
                                     class="bi bi-eye-fill"></i><br>Visualizar</button>
@@ -148,9 +148,9 @@
                                     <div class="direita">
                                         <img src="<?php echo $post->imagem ?>">
                                         <h3>Data da leitura</h3>
-                                        <p><?php echo $post->data_leitura ?></p>
+                                        <p><?php echo DateTime::createFromFormat('Y-m-d', $post->data_leitura)->format('d/m/Y') ?></p>
                                         <h3>Data da publicação</h3>
-                                        <p><?php echo $post->data_post ?></p>
+                                        <p><?php echo DateTime::createFromFormat('Y-m-d', $post->data_post)->format('d/m/Y') ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -158,6 +158,8 @@
                                 onclick="fecharModal('visualizar<?php echo $post->id ?>')">&times;</button>
                         </div>
                     </div>
+
+                    <!-- MODAL DE VISUALIZAÇÃO - FIM -->
 
                     <!-- MODAL DE DELETAR - INICIO -->
                     <div id="rm-post<?php echo $post->id ?>" class="cont-modal">
@@ -194,17 +196,17 @@
                                     <div class="direita">
                                         <label for="titulo-livro">Título do livro</label>
                                         <input type="text" id="titulo-livro" name="titulo-livro"
-                                            placeholder="Título do livro" value="Livro">
+                                            placeholder="Título do livro" value="<?= $post->livro_titulo?>">
                                         <label for="autor-livro">Nome do autor</label>
                                         <input type="text" id="autor-livro" name="autor-livro"
-                                            placeholder="Nome do autor do livro" value="autor">
+                                            placeholder="Nome do autor do livro" value="<?= $post->livro_autor?>">
                                         <label for="ano-pub">Ano de publicação</label>
                                         <input name="ano-pub" id="ano-pub" type="number" placeholder="Ano de publicação"
-                                            max="2024" value="1990">
+                                            max="2024" value="<?= $post->livro_ano?>">
                                     </div>
                                     <div class="esquerda">
                                         <label for="sinopse">Sinopse</label><br>
-                                        <textarea name="sinopse" rows="7" cols="50" id="sinopse">Sinopse</textarea>
+                                        <textarea name="sinopse" rows="7" cols="50" id="sinopse"><?= $post->sinopse?></textarea>
                                         <br>
                                         <label>Nota média da internet</label><br>
                                         <div class="rating">
@@ -380,15 +382,14 @@
                                 </div>
                                 <hr>
 
-
                                 <div class="formulario">
 
                                     <div class="esquerda">
                                         <label for="autor">Autor</label><br>
-                                        <input type="text" id="autor" name="autor" value="pedro_123" readonly><br>
+                                        <input type="text" id="autor" name="autor" value="<?= $post->name?>" readonly><br>
                                         <label for="titulo">Título</label><br>
                                         <input type="text" id="titulo" name="titulo" placeholder="Título da sua review"
-                                            value="Título">
+                                            value="<?= $post->titulo_post?>">
                                         <div class="rating">
                                             <?php
                                                 $notaUser = $post->nota_user;
@@ -556,17 +557,17 @@
                                         <label for="conteudo">Review</label><br>
                                         <textarea type="text" id="conteudo" name="conteudo"
                                             placeholder="Conteudo da sua review" rows="7"
-                                            cols="50">Sua review</textarea>
+                                            cols="50"><?= $post->review?></textarea>
                                     </div>
 
                                     <div class="direita">
-                                        <div class="img-prev"><img id="preview2" src="../../../public/assets/capa.jpg"
+                                        <div class="img-prev"><img id="preview2" src="<?= $post->imagem?>"
                                                 alt="Pré-visualização da imagem">
                                         </div>
                                         <label for="img">Selecione uma imagem:</label>
                                         <input type="file" id="img-edita" name="img" accept="image/*">
                                         <label for="data">Data da leitura:</label>
-                                        <input type="date" id="prev-data" value="2024-03-14" name="data">
+                                        <input type="date" id="prev-data" value="<?= $post->data_leitura ?>" name="data">
                                     </div>
 
                                 </div>
@@ -575,14 +576,14 @@
 
                             </form>
 
-                            <button class="fecha" onclick="fecharModal('edit-post<?php $post->id ?>')">&times;</button>
+                            <button class="fecha" onclick="fecharModal('edit-post<?php echo $post->id ?>')">&times;</button>
 
                         </div>
 
                     </div>
                     <?php $idCont++; ?>
                     <?php endforeach; ?>
-                    <!-- MODAL DE VISUALIZAÇÃO - FIM -->
+                    <!-- MODAL DE EDITAR - FIM -->
 
                 </tbody>
             </table>
