@@ -74,13 +74,13 @@
             <tr class="linha-mobile">
               <td class="table-id" rowspan="2">01</td>
               <td class="nome"><?php echo $user->name ?></td>
-              <td class="email"><?php $user -> email ?></td>
+              <td class="email"><?php echo $user -> email ?></td>
               <td align="center" class="espaco-visualizar"><button class="visualizar"
-                  onclick="abrebotao('modal-visualizar')"><i class="bi bi-eye-fill"></i>Visualizar</button></td>
+                  onclick="abrebotao('modal-visualizar<?php echo $user -> id ?>')"><i class="bi bi-eye-fill"></i>Visualizar</button></td>
               <td align="center" class="espaco-editar"><button class="editar" id="abrebotao"
                   onclick="abrebotao('edicaouser<?php echo $user -> id ?>')"><i class="bi bi-pencil-square"></i>Editar</button></td>
               <td align="center" class="espaco-deletar ultimoDado"><button class="deletar"
-                  onclick="abrebotao('excluir')"><i class="bi bi-trash3-fill"></i>Deletar</button></td>
+                  onclick="abrebotao('excluir<?php echo $user -> id ?>')"><i class="bi bi-trash3-fill"></i>Deletar</button></td>
             </tr>
 
             <tr class="botoes-mobile">
@@ -90,7 +90,7 @@
                       class="bi bi-eye-fill"></i><br>Visualizar</button>
                   <button type="button" class="botao-editar" onclick="abrebotao('edicaouser<?php echo $user -> id ?>')"><i
                       class="bi bi-pencil-square"></i><br>Editar</button>
-                  <button type="button" class="botao-deletar" onclick="abrebotao('excluir')"><i
+                  <button type="button" class="botao-deletar" onclick="abrebotao('excluir<?php echo $user -> id ?>')"><i
                       class="bi bi-trash3-fill"></i><br>Deletar</button>
                 </div>
               </td>
@@ -129,9 +129,9 @@
                       <input type="email" id="email" name="email" value="<?php echo $user -> email ?>"><br>
                       <label for="senha">Senha</label><br>
                       <div class="senha-e-olho">
-                        <input type="password" id="senha" name="senha" value="<?php echo $user -> password ?>">
-                        <div class="olho" onclick="mostrarSenha()">
-                          <img id="icone-olho" src="../../../public/assets/olho-aberto.svg"
+                        <input type="password" id="senha<?php echo $user -> id ?>" name="senha" value="<?php echo $user -> password ?>">
+                        <div class="olho" onclick="mostrarSenha('senha<?php echo $user -> id ?>', 'icone-olho<?php echo $user -> id ?>')">
+                          <img id="icone-olho<?php echo $user -> id ?>" src="../../../public/assets/olho-aberto.svg"
                             alt="Ícone de olho representando a visibilidade da senha">
                         </div>
                       </div>
